@@ -145,11 +145,14 @@ void HandleCreateCamera(rapidjson::Value const& json) {
     UnityEngine::Shader::SetGlobalTexture(cam.texturePropertyId.value(),
       static_cast<UnityEngine::Texture*>(cam.colorRT));
   }
-  if (cam.depthTexturePropertyId.has_value()) {
+ 
+if (cam.depthTexturePropertyId.has_value()) {
     cam.depthRT = UnityEngine::RenderTexture::New_ctor(w, h, 24, UnityEngine::RenderTextureFormat::Depth);
     cam.depthRT->Create();
+    cam.camera->set_targetTexture(cam.depthRT); 
     UnityEngine::Shader::SetGlobalTexture(cam.depthTexturePropertyId.value(),
       static_cast<UnityEngine::Texture*>(cam.depthRT));
+}
   }
 
   ApplyCameraProperties(cam.camera, cam.properties);
