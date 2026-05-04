@@ -75,20 +75,34 @@ jobs:
           mv /tmp/qpm/qpm /usr/local/bin/qpm
           chmod +x /usr/local/bin/qpm
           qpm restore
-
+          
       - name: Upload BS headers
         uses: actions/upload-artifact@v4
         with:
           name: bs-cordl-headers
           path: |
-            extern/includes/bs-cordl/include/GlobalNamespace/GameNoteController.hpp
-            extern/includes/bs-cordl/include/GlobalNamespace/BombNoteController.hpp
-            extern/includes/bs-cordl/include/GlobalNamespace/NoteController.hpp
-            extern/includes/bs-cordl/include/GlobalNamespace/SaberModelController.hpp
-            extern/includes/bs-cordl/include/GlobalNamespace/NoteMovement.hpp
-            extern/includes/bs-cordl/include/GlobalNamespace/NoteData.hpp
-            extern/includes/bs-cordl/include/GlobalNamespace/Saber.hpp
-          if-no-files-found: warn
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__GameNoteController_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__BombNoteController_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__NoteController_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__SaberModelController_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__NoteData_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__Saber_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__NoteMovement_def.hpp
+          if-no-files-found: 
+          uses: actions/upload-artifact@v4 
+          with:
+          name: bs-cordl-headers
+          
+        path: |
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__GameNoteController_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__BombNoteController_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__NoteController_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__SaberModelController_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__NoteData_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__Saber_def.hpp
+            extern/includes/bs-cordl/include/GlobalNamespace/zzzz__NoteMovement_def.hpp
+           if-no-files-found: warn
+     
 
       - name: Build & Create Qmod
         run: |
