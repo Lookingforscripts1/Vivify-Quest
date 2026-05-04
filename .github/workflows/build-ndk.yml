@@ -67,14 +67,14 @@ jobs:
         run: |
           echo "TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_OUTPUT}
           echo "VERSION=${GITHUB_REF#refs/tags/v}" >> ${GITHUB_OUTPUT}
-
       - name: Setup qpm
         run: |
-          QPM_VERSION=$(curl -s https://api.github.com/repos/QuestPackageManager/QPM.CLI/releases/latest | jq -r '.tag_name')
-          DOWNLOAD_URL=$(curl -s https://api.github.com/repos/QuestPackageManager/QPM.CLI/releases/latest | jq -r '.assets[] | select(.name | contains("linux")) | .browser_download_url')
-          curl -SL "${DOWNLOAD_URL}" -o /usr/local/bin/qpm
+          curl -SL "https://github.com/QuestPackageManager/QPM.CLI/releases/download/v1.5.9/qpm-linux-x64.zip" -o /tmp/qpm.zip
+          unzip /tmp/qpm.zip -d /tmp/qpm
+          mv /tmp/qpm/qpm /usr/local/bin/qpm
           chmod +x /usr/local/bin/qpm
           qpm restore
+      
 
       - name: Build & Create Qmod
         run: |
