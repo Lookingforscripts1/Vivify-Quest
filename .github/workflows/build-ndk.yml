@@ -71,7 +71,8 @@ jobs:
       - name: Setup qpm
         run: |
           QPM_VERSION=$(curl -s https://api.github.com/repos/QuestPackageManager/QPM.CLI/releases/latest | jq -r '.tag_name')
-          curl -SL "https://github.com/QuestPackageManager/QPM.CLI/releases/download/${QPM_VERSION}/QPM.CLI-linux-x64" -o /usr/local/bin/qpm
+          DOWNLOAD_URL=$(curl -s https://api.github.com/repos/QuestPackageManager/QPM.CLI/releases/latest | jq -r '.assets[] | select(.name | contains("linux")) | .browser_download_url')
+          curl -SL "${DOWNLOAD_URL}" -o /usr/local/bin/qpm
           chmod +x /usr/local/bin/qpm
           qpm restore
 
