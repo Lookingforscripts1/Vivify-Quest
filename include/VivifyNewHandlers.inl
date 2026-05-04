@@ -152,7 +152,7 @@ if (cam.depthTexturePropertyId.has_value()) {
     cam.camera->set_targetTexture(cam.depthRT); 
     UnityEngine::Shader::SetGlobalTexture(cam.depthTexturePropertyId.value(),
       static_cast<UnityEngine::Texture*>(cam.depthRT));
-}
+
   }
 
   ApplyCameraProperties(cam.camera, cam.properties);
