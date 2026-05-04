@@ -1,4 +1,4 @@
-﻿\# Vivify Quest Port
+﻿Vivify Quest Port
 
 
 
@@ -10,17 +10,17 @@ target game version is 1.40.8
 
 
 
-\### missing features
+missing features
 
-\- custom sabers and notes (adding this soon dont worry :) 
+custom sabers and notes (adding this soon dont worry :) 
 
-\### mappers
+ note to mappers
 
 you HAVE to export an android bundle because the game literally cannot load windows bundles on a quest
 
 
 
-\### building
+building the mod
 
 make sure qpm is installed
 
@@ -40,7 +40,7 @@ qpm s qmod
 
 
 
-\### note
+note:
 
 this is an early release, expect bugs
 
