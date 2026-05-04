@@ -76,6 +76,7 @@ jobs:
         restore: true
         cache: true
         publish: false
+        qpm_release_bin: true
 
     - name: Build & Create Qmod
       run: |
