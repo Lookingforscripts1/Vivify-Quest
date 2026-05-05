@@ -11,7 +11,7 @@
   "description": "Quest port of Vivify for Beat Saber.",
   "modFiles": [],
   "lateModFiles": [
-    "${binary}"
+    "libVivify.so"
   ],
   "libraryFiles": [],
   "dependencies": [],
