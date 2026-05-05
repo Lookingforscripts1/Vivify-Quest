@@ -48,7 +48,12 @@ add_compile_definitions(VERSION="${CMAKE_PROJECT_VERSION}")
 
 # Set COMPILE_ID for qpm purposes
 set(COMPILE_ID ${CMAKE_PROJECT_NAME})
-
+# Generate mod.json from template
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/mod.template.json"
+    "${CMAKE_CURRENT_SOURCE_DIR}/mod.json"
+    @ONLY
+)
 # recursively get all src files
 RECURSE_FILES(cpp_file_list ${SOURCE_DIR}/*.cpp)
 RECURSE_FILES(c_file_list ${SOURCE_DIR}/*.c)
