@@ -2,7 +2,7 @@
   "_QPVersion": "0.1.1",
   "id": "${mod_id}",
   "name": "Vivify",
-  "version": "${version}",
+  "version": "0.1.0",
   "author": "Aeroluna",
   "modloader": "Scotland2",
   "packageId": "com.beatgames.beatsaber",
@@ -13,5 +13,7 @@
   "lateModFiles": [
     "${binary}"
   ],
-  "libraryFiles": []
+  "libraryFiles": [],
+  "dependencies": [],
+  "fileCopies": []
 }
