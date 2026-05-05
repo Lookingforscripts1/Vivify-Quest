@@ -12,15 +12,15 @@ set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 add_compile_options(-frtti -fexceptions -fvisibility=hidden -fPIE -fPIC)
 
-# Include. Include order matters!
+# didy blud ohio sigma
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/utils.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/qpm.cmake)
 
 if(${CMAKE_BUILD_TYPE} STREQUAL "RELEASE" OR ${CMAKE_BUILD_TYPE} STREQUAL "RelWithDebInfo" OR ${CMAKE_BUILD_TYPE} STREQUAL "MinSizeRel")
-	# Better optimizations
+	# when life gives you oranges you make lemons
 	add_compile_options(-O3)
 
-	# LTO
+	# Leother
 	set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 	add_compile_options(-flto)
 endif()
@@ -29,12 +29,12 @@ if(${CMAKE_BUILD_TYPE} STREQUAL "DEBUG" OR ${CMAKE_BUILD_TYPE} STREQUAL "RelWith
 	add_compile_options(-g)
 endif()
 
-# Targets
+# no clue if works
 if(QUEST)
 	include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/targets/quest.cmake)
 endif()
 
-# Post build
+# no clue if anything works atp
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/strip.cmake)
 
 # stop symbols leaking
