@@ -60,6 +60,10 @@
 #include "tracks/shared/AssociatedData.h"
 #include "tracks/shared/Constants.h"
 #include "tracks/shared/StaticHolders.hpp"
+#include "GlobalNamespace/NoteController.hpp"
+#include "GlobalNamespace/SaberModelController.hpp"
+#include "UnityEngine/Renderer.hpp"
+#include "UnityEngine/Component.hpp"
 
 using namespace std::string_view_literals;
 
